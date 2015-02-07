@@ -48,7 +48,7 @@ class Differ
   # ==== Options 
   # 
   # * +:force_reload+ - boolean - reload files contents
-   def to_s(options = {})
+  def to_s(options = {})
     get_diff(options) if options[:force_reload] || !@total_diff.any?
 
     @total_diff.each_with_index.collect do |line, line_num|
