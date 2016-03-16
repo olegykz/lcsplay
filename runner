@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require './differ'
+
+differ = Differ.new *ARGV
+puts differ.get_diff

@@ -6,7 +6,7 @@ class Differ
   require 'diff-lcs'
 
   ##
-  # Create new differ instance 
+  # Create new differ instance
   #
   # At least two files should be specified as arguments
   # otherwise ArgumentError will be raised
@@ -23,8 +23,8 @@ class Differ
   end
 
   # Get raw diff data for further processing
-  # ==== Options 
-  # 
+  # ==== Options
+  #
   # * +:force_reload+ - boolean - reload files contents
   def get_diff(options = {})
     return @total_diff if @total_diff.any? && !options[:force_reload]
@@ -45,8 +45,8 @@ class Differ
   end
 
   # Get pretty-formatted output
-  # ==== Options 
-  # 
+  # ==== Options
+  #
   # * +:force_reload+ - boolean - reload files contents
   def to_s(options = {})
     get_diff(options) if options[:force_reload] || !@total_diff.any?
@@ -81,7 +81,7 @@ class Differ
         [operator, line1.last || line2.last]
       when "="
         ["", line1.last]
-      else 
+      else
         ['? possible diff-lcs bug ?']
       end
   end
